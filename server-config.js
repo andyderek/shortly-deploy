@@ -21,13 +21,7 @@ function handleSayHello(req, res) {
             pass: '@ndi31@n3' // Your password
         }
     });
-var mailOptions = {
-    from: 'andielane@yahoo.com', // sender address
-    to: 'receiver@destination.com', // list of receivers
-    subject: 'Email Example', // Subject line
-    text: "CHICKEN IN A BAG" //, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
-};
+
 transporter.sendMail(mailOptions, function(error, info){
     if(error){
         console.log(error);
