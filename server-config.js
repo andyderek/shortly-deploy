@@ -6,41 +6,6 @@ var handler = require('./lib/request-handler');
 
 var app = express();
 
-var nodemailer = require('nodemailer');
-
-var router = express.Router();
-app.use('/sayHello', router);
-router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello
-
-function handleSayHello(req, res) {
-    // Not the movie transporter!
-    var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'andielane@yahoo.com', // Your email id
-            pass: '@ndi31@n3' // Your password
-        }
-    });
-
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        console.log(error);
-        res.json({yo: 'error'});
-    }else{
-        console.log('Message sent: ' + info.response);
-        res.json({yo: info.response});
-    };
-});
-}
-
-var mailOptions = {
-    from: 'andielane@yahoo.com', // sender address
-    to: 'receiver@destination.com', // list of receivers
-    subject: 'Email Example', // Subject line
-    text: "CHICKEN IN A BAG" //, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
-};
-
 app.configure(function() {
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
