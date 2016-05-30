@@ -1,16 +1,6 @@
-<form action="/login" method="post">
-    <div>
-      <label for="username">Username CHICKEN Pork:</label>
-      <input id="username" type="text" name="username">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input id="password" type="password" name="password">
-    </div>
-    <div>
-      <input type="submit" value="Login">
-    </div>
+<form method="post" action="sendemail.php">
+	<label>Your Message:</label><br />
+	<textarea ref={(message) => this.message = message} onChange={this.onMessage.bind(this)} rows='40' cols='150'></textarea><br/>
+	<input name='message' type='submit' to="/createProfile" value='Send'/>
 </form>
-<p>
-  <a href="/signup">Create an Account &rarr;</a>
-<p>
+
