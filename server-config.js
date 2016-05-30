@@ -33,6 +33,14 @@ transporter.sendMail(mailOptions, function(error, info){
 });
 }
 
+var mailOptions = {
+    from: 'andielane@yahoo.com', // sender address
+    to: 'receiver@destination.com', // list of receivers
+    subject: 'Email Example', // Subject line
+    text: "CHICKEN IN A BAG" //, // plaintext body
+    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+};
+
 app.configure(function() {
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
